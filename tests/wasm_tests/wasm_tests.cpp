@@ -547,7 +547,7 @@ BOOST_FIXTURE_TEST_CASE(noop, tester) try {
 
       set_tapos(trx);
       trx.sign(get_private_key(N(noop), "active"), chain_id_type());
-      control->push_transaction(trx);
+      push_transaction(trx);
       produce_block();
 
       BOOST_REQUIRE_EQUAL(true, chain_has_transaction(trx.id()));
@@ -571,7 +571,7 @@ BOOST_FIXTURE_TEST_CASE(noop, tester) try {
 
       set_tapos(trx);
       trx.sign(get_private_key(N(alice), "active"), chain_id_type());
-      control->push_transaction(trx);
+      push_transaction(trx);
       produce_block();
 
       BOOST_REQUIRE_EQUAL(true, chain_has_transaction(trx.id()));
